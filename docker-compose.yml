@@ -1,14 +1,12 @@
 version: "3"
 services:
-  jupyterlab:
-    build:
-      context: .  # プロジェクトディレクトリを指定
-      dockerfile: Dockerfile  # Dockerfile のパスを指定
-    container_name: rembg
+  image-converter:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: python-rembg-image-converter:latest
+    container_name: image-converter
     volumes:
-      - '.:/workspace'
-    environment:
-      - JUPYTER_ENABLE_LAB=yes
-    ports:
-      - "8888:8888"
-    platform: linux/amd64
+      - .:/workspace
+    stdin_open: true
+    tty: true
