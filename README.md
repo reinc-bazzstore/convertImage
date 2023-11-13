@@ -8,7 +8,11 @@ cd convertImage
 docker-compose up --build -d
 ```
 
-## python ファイルの実行
+## 使い方
+
+画像ファイルを用意
+
+ファイル名は`input.jpg`であること
 
 ```
 python3 (実行したいpythonファイル)
